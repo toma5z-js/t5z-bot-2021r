@@ -1,0 +1,27 @@
+{
+    "token" : "token",
+    "prefix" : "",
+    "verifyrole" : "1091748010863628381",
+    "adminroles" : [
+        "1091748316485783672", 
+        "1091748384509022289",
+        "1091748478734049373"
+    ],
+    "modroles" : [
+        "1091748932226404432",
+        "1091748958931521556"
+    ],
+    "wlresultchannel" : "1091749641617428522",
+    "okienkochannel" : "1091750076789035048",
+    "zdanerole" : "1091749736807137390",
+    "blacklistrole" : "1091749898770206741",
+    "blacklistchannel":"1091752150876573747",
+    "viprole" : "1091750957131505725",
+
+    "statusactivities" : [
+        "jebanie ci matki",
+        "jebanie ci ojca",
+        "mycie dupy"
+    ]
+}
+
