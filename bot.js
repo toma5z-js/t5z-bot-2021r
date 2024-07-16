@@ -9,14 +9,13 @@ const { config } = require("process");
 const client = new Discord.Client();
 const configs = require("./config.json");
 client.config = configs;
-const version = "2.0.0 "; /// Bot version
 
-const dev = " | Author: tom " ;
+
+
 
 // change:
 
-const footer = ' © ProjectFIVE.PL | ';
-const iconurl = "https://cdn.discordapp.com/attachments/940014203467608124/967783652467539968/lgoov.png";
+
 
 
 
@@ -58,16 +57,16 @@ client.on("message", async message => {
     color : 0xfccb6c, 
     author :{
   
-      name : footer,
-      icon_url : iconurl
+      name : configs.footer,
+      icon_url : configs.iconur
     },
   
     
   title : "Nie posiadasz wystarczajaco permisji ",
     description : `${message.author} Nie mozesz tego zrobic. Nie jestes administratorem `, 
   footer :{
-    text: footer + dev,
-    icon_url: iconurl,
+    text: configs.footer + configs.dev,
+    icon_url: configs.iconurl,
   },
     };
 
@@ -96,16 +95,16 @@ client.on("message", async message => {
     color : 0xfccb6c, 
     author :{
 
-      name : footer,
-      icon_url : iconurl
+      name : configs.footer,
+      icon_url : configs.iconurl
     },
 
     
 	title : "Cos poszlo nie tak ",
     description : ' Spróbuj oznaczyc ta osobę jeszcze raz! ', 
 	footer :{
-		text: footer  + dev,
-		icon_url: iconurl,
+		text: configs.footer  + configs.dev,
+		icon_url: configs.iconurl,
 	},
     };
 
@@ -121,16 +120,16 @@ client.on("message", async message => {
     color : 0xfccb6c, 
     author :{
   
-      name : footer,
-      icon_url : iconurl
+      name : configs.footer,
+      icon_url : configs.iconurl
     },
   
     
   title : "Gratulacje!",
     description : ' Pomyślnie zweryfikowano. Życzymy miłej gry! ', 
   footer :{
-    text: `${footer} Weryfikacja` + dev,
-    icon_url: iconurl,
+    text: `${configs.footer} Weryfikacja` + configs.dev,
+    icon_url: configs.iconurl,
   },
     };
   
@@ -212,15 +211,15 @@ if(command==="blacklist"){
     color : 0x0f0f0f, 
     author :{
   
-      name : `${footer} Blacklist `,
-      icon_url : iconurl
+      name : `${configs.footer} Blacklist `,
+      icon_url : configs.iconurl
     },
   
   
     title : "Dodano blacklist list dla użytkownika o ID: "+member,
     description : ` Nick użytkownika: <@` +member +">  Powód: " + powod, 
     footer :{
-    text: footer + message.author.tag,
+    text: configs.footer + message.author.tag,
     icon_url: message.author.displayAvatarURL({ format: 'png' }),
   },
     };
@@ -264,8 +263,8 @@ const okienko1 ={
   color : 0x43e043, 
   author :{
 
-    name : footer,
-    icon_url : iconurl
+    name : configs.footer,
+    icon_url : configs.iconurl
   },
 
   
@@ -305,8 +304,8 @@ footer :{
     color : 0xC41414, 
     author :{
   
-      name : footer,
-      icon_url : iconurl
+      name : configs.footer,
+      icon_url : configs.iconurl
     },
   
     
@@ -364,16 +363,16 @@ footer :{
       color : 0xfccb6c, 
       author :{
     
-        name : footer,
-        icon_url : iconurl
+        name : configs.footer,
+        icon_url : configs.iconur
       },
     
       
     title : `Twoj ping:  `,
     description : `${message.author} Twoj ping to:  ${m.createdTimestamp - message.createdTimestamp}ms.` ,
     footer :{
-    text: footer +dev,
-    icon_url: iconurl,
+    text: configs.footer +configs.dev,
+    icon_url: configs.iconur,
 
 
 
@@ -409,16 +408,16 @@ footer :{
 
       color : 0xfccb6c, 
       author :{
-        name : footer,
-        icon_url : iconurl
+        name : configs.footer,
+        icon_url : configs.iconurl
       },
     
       
       title : `${person}:`,
       description :  args.join(" "),
       footer :{
-      text: footer+ dev,
-      icon_url: iconurl,
+      text: configs.footer+ configs.dev,
+      icon_url: configs.iconurl,
     },
       };
 
@@ -442,19 +441,19 @@ if(!reason) reason = " - ";
 const zbanowanyembed={
   
 
-  color : 0xfccb6c, 
+  color : 0xfccb6f, 
   author :{
 
-    name : footer,
-    icon_url : iconurl
+    name : configs.footer, 
+    icon_url : configs.iconurl
   },
 
   
 title : `BANNED`,
   description : ` Zostałeś zbanowany przez administratora: ${message.author.tag}, z powodu ${reason}` , 
 footer :{
-  text: footer + version + dev,
-  icon_url: iconurl,
+  text: configs.footer + configs.version + configs.dev,
+  icon_url: configs.iconurl,
 },
 
 
@@ -476,16 +475,16 @@ const zkickowanyemved={
   color : 0xfccb6c, 
   author :{
 
-    name : footer,
-    icon_url : iconurl
+    name : configs.footer,
+    icon_url : configs.iconurl
   },
 
   
 title : `KICKED`,
   description : ` Zostałeś wyrzucony przez administratora: ${message.author.tag}, z powodu ${reason}` , 
 footer :{
-  text: footer +  dev,
-  icon_url: iconurl,
+  text: configs.footer +  configs.dev,
+  icon_url: configs.iconurl,
 },
 
 
@@ -529,16 +528,16 @@ footer :{
         color : 0xfccb6c, 
         author :{
       
-          name : footer,
-          icon_url : iconurl
+          name : configs.footer,
+          icon_url : configs.iconurl
         },
       
         
       title : " Uzytkownik zostal pomyslnie **Wyrzucony!** ",
         description : `${member.user.tag} Zostal wyrzucony przez ${message.author.tag}. Powod: ${reason}`, 
       footer :{
-        text: footer +  dev,
-        icon_url: iconurl,
+        text: configs.footer +  configs.dev,
+        icon_url: configs.iconurl,
       },
         };
     
@@ -567,16 +566,16 @@ footer :{
         color : 0xfccb6c, 
         author :{
       
-          name : footer,
-          icon_url : iconurl
+          name : configs.footer,
+          icon_url : configs.iconurl
         },
       
         
       title : " Uzytkownik zostal **zbanowany!** ",
         description : `${member.user.tag} Zostal zbanowany przez ${message.author.tag}. Powod: ${reason}`, 
       footer :{
-        text: footer + dev,
-        icon_url: iconurl,
+        text: configs.footer + configs.dev,
+        icon_url: configs.iconurl,
       },
         };
     
@@ -599,16 +598,16 @@ footer :{
         color : 0xfccb6c, 
         author :{
     
-          name : footer,
-          icon_url : iconurl
+          name : configs.footer,
+          icon_url : configs.iconurl
         },
     
     
         title : "**IP serwera** ",
         description : `connect **ls.projectfive.pl**  `, 
         footer :{
-        text: ` ${footer} | IP Serwera  `,
-        icon_url: iconurl,
+        text: ` ${configs.footer} | IP Serwera  `,
+        icon_url: configs.iconurl,
       },
 
 
@@ -643,8 +642,8 @@ footer :{
         color : 0x00ff00, 
         author :{
     
-          name : footer,
-          icon_url : iconurl
+          name : configs.footer,
+          icon_url : configs.iconurl
         },
     
     
@@ -681,8 +680,8 @@ footer :{
       color : 0xff0000, 
       author :{
   
-        name : footer,
-        icon_url : iconurl
+        name : configs.footer,
+        icon_url : configs.iconurl
       },
   
   
@@ -701,8 +700,8 @@ footer :{
       color : 0xff0000, 
       author :{
     
-        name : footer,
-        icon_url : iconurl
+        name : configs.footer,
+        icon_url : configs.iconurl
       },
     
     
@@ -739,8 +738,8 @@ footer :{
     color : 0x00ff00, 
     author :{
 
-      name : footer,
-      icon_url : iconurl
+      name : configs.footer,
+      icon_url : configs.iconurl
     },
 
 

@@ -22,6 +22,11 @@
         "jebanie ci matki",
         "jebanie ci ojca",
         "mycie dupy"
-    ]
+    ],
+
+    "footer" : " © ProjectFIVE.PL | ",
+    "dev":" | Author: tom ",
+    "iconurl" : "https://cdn.discordapp.com/attachments/940014203467608124/967783652467539968/lgoov.png",
+    "version": " 2.0.1 " 
 }
 
